@@ -1,6 +1,8 @@
 # Kimberly Dean Creative
 
-Temporary static website for Kimberly Dean Creative, published with GitHub Pages.
+Temporary static website for Kimberly Dean Creative, published with GitHub Pages:
+
+https://joecdean1.github.io/kimberly-dean-creative/
 
 ## Update locally
 
