@@ -1,6 +1,6 @@
-# Kimberly Dean Creative
+# 1122 Spruce
 
-Temporary static website for Kimberly Dean Creative, published with GitHub Pages:
+Temporary static website for 1122 Spruce LLC and Kimberly Dean's graphic design and creative services, published with GitHub Pages:
 
 https://joecdean1.github.io/kimberly-dean-creative/
 
