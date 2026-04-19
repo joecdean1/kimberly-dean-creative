@@ -3,16 +3,14 @@
   --brand-green: #006838;
   --brand-green-bright: #08A54B;
   --ink: #414042;
-  --neutral: #EAEAEA;
-  --wash: #E2F2EB;
-  --surface: var(--neutral);
-  --soft: var(--wash);
-  --muted: rgba(65, 64, 66, 0.78);
-  --line: rgba(65, 64, 66, 0.18);
-  --line-strong: rgba(65, 64, 66, 0.34);
-  --on-dark: var(--neutral);
-  --on-dark-muted: rgba(234, 234, 234, 0.78);
-  --shadow: 0 24px 70px rgba(65, 64, 66, 0.16);
+  --white: #FFFFFF;
+  --surface: var(--white);
+  --soft: var(--white);
+  --muted: var(--ink);
+  --line: var(--ink);
+  --on-dark: var(--white);
+  --on-dark-muted: var(--white);
+  --shadow: none;
 }
 
 * {
@@ -33,7 +31,7 @@ body {
 
 body::selection {
   background: var(--brand-green);
-  color: var(--neutral);
+  color: var(--white);
 }
 
 a {
@@ -68,7 +66,7 @@ main > section {
 
 .site-header {
   align-items: center;
-  background: rgba(234, 234, 234, 0.94);
+  background: var(--white);
   border-bottom: 1px solid var(--line);
   display: flex;
   gap: 24px;
@@ -96,7 +94,7 @@ main > section {
   align-items: center;
   background: var(--brand-green);
   border-radius: 6px;
-  color: var(--neutral);
+  color: var(--white);
   display: inline-flex;
   flex: 0 0 auto;
   font-size: 13px;
@@ -114,7 +112,7 @@ main > section {
 }
 
 .nav-links a {
-  border-bottom: 2px solid transparent;
+  border-bottom: 2px solid var(--white);
   padding: 6px 0;
 }
 
@@ -136,9 +134,10 @@ main > section {
 
 .hero-media {
   background:
-    linear-gradient(90deg, rgba(65, 64, 66, 0.94) 0%, rgba(65, 64, 66, 0.76) 48%, rgba(65, 64, 66, 0.3) 100%),
+    var(--ink)
     url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=80")
       center / cover;
+  background-blend-mode: multiply;
   inset: 0;
   position: absolute;
   z-index: -1;
@@ -163,7 +162,7 @@ main > section {
 }
 
 .hero .eyebrow {
-  color: var(--wash);
+  color: var(--white);
 }
 
 h1,
@@ -226,10 +225,10 @@ p {
 
 .button {
   align-items: center;
-  border: 2px solid transparent;
+  border: 2px solid var(--brand-green);
   border-radius: 6px;
   display: inline-flex;
-  font-size: 15px;
+  font-size: 19px;
   font-weight: 900;
   justify-content: center;
   min-height: 48px;
@@ -248,29 +247,29 @@ p {
 
 .button-primary {
   background: var(--brand-green);
-  color: var(--neutral);
+  color: var(--white);
 }
 
 .button-primary:hover,
 .button-primary:focus-visible {
-  background: var(--brand-green);
+  background: var(--brand-green-bright);
   border-color: var(--brand-green-bright);
-  box-shadow: inset 0 0 0 2px var(--brand-green-bright);
+  box-shadow: none;
 }
 
 .button-secondary {
-  border-color: var(--wash);
-  color: var(--neutral);
+  border-color: var(--white);
+  color: var(--white);
 }
 
 .button-secondary:hover,
 .button-secondary:focus-visible {
-  background: var(--wash);
+  background: var(--white);
   color: var(--ink);
 }
 
 .dark-secondary {
-  border-color: var(--wash);
+  border-color: var(--white);
 }
 
 .trust-strip,
@@ -475,7 +474,7 @@ p {
 
 .retainer .section-kicker,
 .contact .section-kicker {
-  color: var(--wash);
+  color: var(--white);
 }
 
 .retainer-punch {
@@ -485,7 +484,7 @@ p {
 }
 
 .retainer-panel {
-  background: var(--wash);
+  background: var(--white);
   border-radius: 8px;
   box-shadow: var(--shadow);
   color: var(--ink);
@@ -616,7 +615,7 @@ p {
 }
 
 .portfolio .section-kicker {
-  color: var(--wash);
+  color: var(--white);
 }
 
 .portfolio-grid {
@@ -626,8 +625,8 @@ p {
 }
 
 .portfolio-grid article {
-  background: transparent;
-  border-color: rgba(234, 234, 234, 0.28);
+  background: var(--ink);
+  border-color: var(--white);
   color: var(--on-dark);
   font-size: 16px;
   font-weight: 900;
@@ -672,7 +671,7 @@ p {
 }
 
 .featured-price .price-label {
-  color: var(--wash);
+  color: var(--white);
 }
 
 .price-label {
@@ -851,9 +850,10 @@ p {
 
   .hero-media {
     background:
-      linear-gradient(180deg, rgba(65, 64, 66, 0.9) 0%, rgba(65, 64, 66, 0.76) 100%),
+      var(--ink)
       url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80")
         center / cover;
+    background-blend-mode: multiply;
   }
 
   h1 {
