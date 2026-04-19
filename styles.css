@@ -1,17 +1,18 @@
 :root {
   color-scheme: light;
-  --ink: #101112;
-  --charcoal: #242625;
-  --muted: #5c6260;
-  --paper: #ffffff;
-  --soft: #f4f5f2;
-  --line: #d9ded8;
-  --coral: #e84d38;
-  --coral-dark: #c63d2c;
-  --teal: #008a7a;
-  --teal-dark: #006a5d;
-  --gold: #f5c542;
-  --shadow: 0 24px 70px rgba(16, 17, 18, 0.16);
+  --brand-green: #006838;
+  --brand-green-bright: #08A54B;
+  --ink: #414042;
+  --neutral: #EAEAEA;
+  --wash: #E2F2EB;
+  --surface: var(--neutral);
+  --soft: var(--wash);
+  --muted: rgba(65, 64, 66, 0.78);
+  --line: rgba(65, 64, 66, 0.18);
+  --line-strong: rgba(65, 64, 66, 0.34);
+  --on-dark: var(--neutral);
+  --on-dark-muted: rgba(234, 234, 234, 0.78);
+  --shadow: 0 24px 70px rgba(65, 64, 66, 0.16);
 }
 
 * {
@@ -24,17 +25,15 @@ html {
 
 body {
   margin: 0;
-  background: var(--paper);
+  background: var(--surface);
   color: var(--ink);
-  font-family:
-    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+  font-family: "Roboto", sans-serif;
   letter-spacing: 0;
 }
 
 body::selection {
-  background: var(--gold);
-  color: var(--ink);
+  background: var(--brand-green);
+  color: var(--neutral);
 }
 
 a {
@@ -69,8 +68,8 @@ main > section {
 
 .site-header {
   align-items: center;
-  background: rgba(255, 255, 255, 0.92);
-  border-bottom: 1px solid rgba(16, 17, 18, 0.08);
+  background: rgba(234, 234, 234, 0.94);
+  border-bottom: 1px solid var(--line);
   display: flex;
   gap: 24px;
   justify-content: space-between;
@@ -95,9 +94,9 @@ main > section {
 
 .brand-mark {
   align-items: center;
-  background: var(--ink);
+  background: var(--brand-green);
   border-radius: 6px;
-  color: var(--paper);
+  color: var(--neutral);
   display: inline-flex;
   flex: 0 0 auto;
   font-size: 13px;
@@ -121,12 +120,12 @@ main > section {
 
 .nav-links a:hover,
 .nav-links a:focus-visible {
-  border-color: var(--coral);
+  border-color: var(--brand-green-bright);
 }
 
 .hero {
   align-items: end;
-  color: var(--paper);
+  color: var(--on-dark);
   display: grid;
   isolation: isolate;
   min-height: 88vh;
@@ -137,7 +136,7 @@ main > section {
 
 .hero-media {
   background:
-    linear-gradient(90deg, rgba(16, 17, 18, 0.92) 0%, rgba(16, 17, 18, 0.74) 48%, rgba(16, 17, 18, 0.28) 100%),
+    linear-gradient(90deg, rgba(65, 64, 66, 0.94) 0%, rgba(65, 64, 66, 0.76) 48%, rgba(65, 64, 66, 0.3) 100%),
     url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=80")
       center / cover;
   inset: 0;
@@ -154,7 +153,7 @@ main > section {
 .work-label,
 .panel-label,
 .price-label {
-  color: var(--teal);
+  color: var(--brand-green);
   font-size: 13px;
   font-weight: 900;
   letter-spacing: 0;
@@ -164,7 +163,7 @@ main > section {
 }
 
 .hero .eyebrow {
-  color: var(--gold);
+  color: var(--wash);
 }
 
 h1,
@@ -200,7 +199,7 @@ p {
 }
 
 .hero-copy {
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--on-dark-muted);
   font-size: 21px;
   line-height: 1.55;
   margin-bottom: 18px;
@@ -208,8 +207,8 @@ p {
 }
 
 .hero-line {
-  border-left: 5px solid var(--gold);
-  color: rgba(255, 255, 255, 0.92);
+  border-left: 5px solid var(--brand-green-bright);
+  color: var(--on-dark);
   font-size: 17px;
   font-weight: 800;
   line-height: 1.5;
@@ -248,28 +247,30 @@ p {
 }
 
 .button-primary {
-  background: var(--coral);
-  color: var(--paper);
+  background: var(--brand-green);
+  color: var(--neutral);
 }
 
 .button-primary:hover,
 .button-primary:focus-visible {
-  background: var(--coral-dark);
+  background: var(--brand-green);
+  border-color: var(--brand-green-bright);
+  box-shadow: inset 0 0 0 2px var(--brand-green-bright);
 }
 
 .button-secondary {
-  border-color: rgba(255, 255, 255, 0.72);
-  color: var(--paper);
+  border-color: var(--wash);
+  color: var(--neutral);
 }
 
 .button-secondary:hover,
 .button-secondary:focus-visible {
-  background: var(--paper);
+  background: var(--wash);
   color: var(--ink);
 }
 
 .dark-secondary {
-  border-color: rgba(255, 255, 255, 0.62);
+  border-color: var(--wash);
 }
 
 .trust-strip,
@@ -322,7 +323,7 @@ p {
 }
 
 .trust-strip {
-  background: var(--paper);
+  background: var(--surface);
   display: grid;
   gap: 0;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -375,7 +376,7 @@ p {
 .portfolio-grid article,
 .process-grid article,
 .pricing-grid article {
-  background: var(--paper);
+  background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 26px;
@@ -386,7 +387,7 @@ p {
 }
 
 .value-grid h3::before {
-  background: var(--coral);
+  background: var(--brand-green-bright);
   content: "";
   display: block;
   height: 5px;
@@ -404,7 +405,7 @@ p {
 }
 
 .comparison {
-  background: var(--paper);
+  background: var(--surface);
 }
 
 .comparison-grid {
@@ -425,12 +426,12 @@ p {
 
 .highlight-card {
   background: var(--ink);
-  color: var(--paper);
+  color: var(--on-dark);
 }
 
 .highlight-card h3,
 .highlight-card li {
-  color: var(--paper);
+  color: var(--on-dark);
 }
 
 .highlight-card li {
@@ -438,8 +439,8 @@ p {
 }
 
 .comparison-note {
-  border-left: 6px solid var(--gold);
-  color: var(--charcoal);
+  border-left: 6px solid var(--brand-green-bright);
+  color: var(--ink);
   font-size: 18px;
   font-weight: 800;
   line-height: 1.6;
@@ -450,7 +451,7 @@ p {
 .retainer {
   align-items: center;
   background: var(--ink);
-  color: var(--paper);
+  color: var(--on-dark);
   display: grid;
   gap: 44px;
   grid-template-columns: minmax(0, 1fr) minmax(320px, 460px);
@@ -464,27 +465,27 @@ p {
 
 .retainer h2,
 .contact h2 {
-  color: var(--paper);
+  color: var(--on-dark);
 }
 
 .retainer p,
 .contact p {
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--on-dark-muted);
 }
 
 .retainer .section-kicker,
 .contact .section-kicker {
-  color: var(--gold);
+  color: var(--wash);
 }
 
 .retainer-punch {
-  border-left: 5px solid var(--gold);
+  border-left: 5px solid var(--brand-green-bright);
   font-weight: 800;
   padding-left: 18px;
 }
 
 .retainer-panel {
-  background: var(--paper);
+  background: var(--wash);
   border-radius: 8px;
   box-shadow: var(--shadow);
   color: var(--ink);
@@ -492,7 +493,7 @@ p {
 }
 
 .retainer-panel .panel-label {
-  color: var(--coral);
+  color: var(--brand-green);
 }
 
 .check-list {
@@ -502,7 +503,7 @@ p {
 
 .check-list li {
   border-top: 1px solid var(--line);
-  color: var(--charcoal);
+  color: var(--ink);
   font-weight: 800;
   margin-bottom: 0;
   padding: 14px 0 14px 30px;
@@ -510,7 +511,7 @@ p {
 }
 
 .check-list li::before {
-  color: var(--teal);
+  color: var(--brand-green-bright);
   content: "+";
   font-size: 20px;
   font-weight: 900;
@@ -520,7 +521,7 @@ p {
 }
 
 .approach {
-  background: var(--paper);
+  background: var(--surface);
 }
 
 .detail-list {
@@ -529,7 +530,7 @@ p {
 
 .detail-list p {
   border-bottom: 1px solid var(--line);
-  color: var(--charcoal);
+  color: var(--ink);
   font-size: 19px;
   font-weight: 800;
   line-height: 1.5;
@@ -566,7 +567,7 @@ p {
 
 .service-grid span,
 .process-grid span {
-  color: var(--coral);
+  color: var(--brand-green);
   display: inline-block;
   font-size: 14px;
   font-weight: 900;
@@ -574,7 +575,7 @@ p {
 }
 
 .fit {
-  background: var(--paper);
+  background: var(--surface);
 }
 
 .fit-grid {
@@ -584,16 +585,16 @@ p {
 }
 
 .fit-grid article {
-  border-top: 6px solid var(--teal);
+  border-top: 6px solid var(--brand-green);
   padding-top: 24px;
 }
 
 .fit-grid .not-fit {
-  border-top-color: var(--coral);
+  border-top-color: var(--brand-green-bright);
 }
 
 .fit-grid p {
-  color: var(--charcoal);
+  color: var(--ink);
   font-size: 17px;
   font-weight: 800;
   line-height: 1.55;
@@ -601,21 +602,21 @@ p {
 }
 
 .portfolio {
-  background: var(--charcoal);
-  color: var(--paper);
+  background: var(--ink);
+  color: var(--on-dark);
 }
 
 .portfolio h2,
 .portfolio h3 {
-  color: var(--paper);
+  color: var(--on-dark);
 }
 
 .portfolio p {
-  color: rgba(255, 255, 255, 0.76);
+  color: var(--on-dark-muted);
 }
 
 .portfolio .section-kicker {
-  color: var(--gold);
+  color: var(--wash);
 }
 
 .portfolio-grid {
@@ -626,8 +627,8 @@ p {
 
 .portfolio-grid article {
   background: transparent;
-  border-color: rgba(255, 255, 255, 0.18);
-  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(234, 234, 234, 0.28);
+  color: var(--on-dark);
   font-size: 16px;
   font-weight: 900;
   min-height: 116px;
@@ -640,7 +641,7 @@ p {
 }
 
 .pricing {
-  background: var(--paper);
+  background: var(--surface);
 }
 
 .pricing-grid {
@@ -655,23 +656,23 @@ p {
 }
 
 .pricing-grid .featured-price {
-  background: var(--ink);
-  border-color: var(--ink);
+  background: var(--brand-green);
+  border-color: var(--brand-green);
   box-shadow: var(--shadow);
-  color: var(--paper);
+  color: var(--on-dark);
 }
 
 .featured-price h3,
 .featured-price strong {
-  color: var(--paper);
+  color: var(--on-dark);
 }
 
 .featured-price p {
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--on-dark-muted);
 }
 
 .featured-price .price-label {
-  color: var(--gold);
+  color: var(--wash);
 }
 
 .price-label {
@@ -692,7 +693,7 @@ p {
 
 .pricing-note {
   background: var(--soft);
-  border-left: 6px solid var(--gold);
+  border-left: 6px solid var(--brand-green-bright);
   margin-top: 22px;
   padding: 22px 24px;
 }
@@ -704,7 +705,7 @@ p {
 }
 
 .pricing-note p:last-child {
-  color: var(--charcoal);
+  color: var(--ink);
   font-weight: 900;
   margin-bottom: 0;
 }
@@ -735,7 +736,7 @@ p {
 .contact {
   align-items: start;
   background: var(--ink);
-  color: var(--paper);
+  color: var(--on-dark);
   display: grid;
   gap: 44px;
   grid-template-columns: minmax(0, 1fr) minmax(320px, 520px);
@@ -748,7 +749,7 @@ p {
 }
 
 .contact-panel {
-  border-left: 6px solid var(--gold);
+  border-left: 6px solid var(--brand-green-bright);
   max-width: 560px;
   padding-left: 28px;
 }
@@ -850,7 +851,7 @@ p {
 
   .hero-media {
     background:
-      linear-gradient(180deg, rgba(16, 17, 18, 0.88) 0%, rgba(16, 17, 18, 0.74) 100%),
+      linear-gradient(180deg, rgba(65, 64, 66, 0.9) 0%, rgba(65, 64, 66, 0.76) 100%),
       url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80")
         center / cover;
   }
